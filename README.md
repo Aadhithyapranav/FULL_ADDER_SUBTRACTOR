@@ -35,6 +35,12 @@ A full subtractor is a combinational circuit that performs subtraction involving
 Diff = A ⊕ B ⊕ Bin 
 
 Borrow out = A'Bin + A'B + BBin
+FULL ADDER:
+![image](https://github.com/user-attachments/assets/2620902c-22f1-496f-8fec-7c097ea69519)
+FULL SUBTRACTOR:
+![image](https://github.com/user-attachments/assets/47bedf00-7b6f-4c0d-ac7a-9288e68e7f94)
+
+
 
 **Truthtable**
 
@@ -43,13 +49,58 @@ Borrow out = A'Bin + A'B + BBin
 Write the detailed procedure here
 
 **Program:**
+FULL SUBTRACTER
+module exp4(sum,cout,a,b,cin);
+output sum;
+outputput cout;
+input a;
+input b;
+input cin;
+//internal nets
+wire s1,c1,c2;
+//Instantiate logic gate primitives
+xor(s1,a,b);
+and(c1,a,b);
+xor(sum,s1,cin);
+and(c2,s1,cin);
+or(cout,c2,c1);
+endmodule
+FULL ADDER
+module exp5 (df,bo,a,b,bin); 
+output df;
+output bo; 
+input a;
+input b;
+input bin;
+wire w1,w2,w3;
+assign w1=a^b;
+assign w2=(~a&b); 
+assign w3=(~w1&bin);
+assign df=w1^bin; assign bo=w2|w3;
+endmodule
 
-/* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
+/* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming. Developed by:AADHITHYA PRANAV RegisterNumber:24003903
 */
 
 **RTL Schematic**
+\\\
+FULL ADDER
+![image](https://github.com/user-attachments/assets/42d44449-8a70-464f-9fa8-72aa9586fc0a)
+FULL SUBTRACTOR
+![image](https://github.com/user-attachments/assets/aa4b2548-0fbb-4642-ad4e-3a6a2a2e479a)
+
+
 
 **Output Timing Waveform**
+\\\
+FULL ADDER
+![image](https://github.com/user-attachments/assets/0ee47432-a87c-42a5-b17c-5b402085003e)
+FULL SUBTRACTOR
+![image](https://github.com/user-attachments/assets/cdfc2eac-8ebf-443b-9c4c-0b0046e3636e)
+
+
+
+
 
 **Result:**
 
